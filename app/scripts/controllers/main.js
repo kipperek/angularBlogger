@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myThingsApp')
+angular.module('spBlogger')
   .controller('MainCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',

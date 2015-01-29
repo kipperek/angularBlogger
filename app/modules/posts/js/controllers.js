@@ -1,17 +1,19 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name myThingsApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the myThingsApp
- */
-angular.module('myThingsApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+angular.module('spBlogger.posts.controllers',['spBlogger.posts.services'])
+  .controller('PostController', ['$scope', 'postService', function ($scope, postService) {
+    $scope.getAllPosts = function(){
+      return postService.getAll();
+    };
+
+    $scope.posts = $scope.getAllPosts();
+
+  }]).controller('PostDetailsController',['$stateParams','$state','$scope','postService',function($stateParams,$state,$scope,postService){
+    $scope.getPostById=function(id){
+      return postService.getPostById(id);
+    };
+    $scope.closePost=function(){
+      $state.go('allPosts');
+    };
+    $scope.singlePost=$scope.getPostById($stateParams.id);
+}]);

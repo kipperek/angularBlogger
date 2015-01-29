@@ -14,10 +14,22 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="myThingsApp">
+  <body ng-app="spBlogger">
 
 
-
+  <div class="container">
+    <br/>
+    <div class="jumbotron text-center">
+      <h1>The Single Page Blogger</h1>
+      <p>One stop blogging solution</p>
+    </div>
+    <div ui-view></div>
+    <div class="row footer">
+      <div class="col-xs-12 text-center">
+        <p>The Single Page Blogger <app-version/></p>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -52,8 +64,8 @@
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -62,5 +74,14 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <!-- endbuild -->
+
+    <!-- POSTS MODULE -->
+    <script src="modules/posts/postModule.js"></script>
+    <script src="modules/posts/js/controllers.js"></script>
+    <script src="modules/posts/js/directives.js"></script>
+    <script src="modules/posts/js/filters.js"></script>
+    <script src="modules/posts/js/services.js"></script>
+    <!--END POSTS-->
+
 </body>
 </html>
